@@ -1,207 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Print - NiceAdmin</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
 
-  <title>Print - NiceAdmin</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
-
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-        </li><!-- End Notification Nav -->
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-        <li class="nav-item dropdown pe-3">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Sir. Hamdi</span>
-          </a><!-- End Profile Iamge Icon -->
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Sir. Hamdi</h6>
-              <span>Chemistry Maestro</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-      </ul>
-    </nav><!-- End Icons Navigation -->
-  </header><!-- End Header -->
-
-  <aside id="sidebar" class="sidebar">
-  <ul class="sidebar-nav" id="sidebar-nav">
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="add.html">
-        <i class="bi bi-grid"></i>
-        <span>Add Question
-        </span>
-      </a>
-      <a class="nav-link collapsed" href="print.html">
-        <i class="bi bi-grid"></i>
-        <span>Print Exams
-        </span>
-      </a>
-      <a class="nav-link collapsed" href="data.html">
-        <i class="bi bi-grid"></i>
-        <span>Bank Exams
-        </span>
-      </a>
-    </li>
-
-  </ul>
-  </aside>
-  <main id="main" class="main" style="text-align:center;">
-
-    <div class="pagetitle"  style="text-align:center;">
-      <h1>Exams</h1>
-    </div><!-- End Page Title -->
-
-   
-
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Print Exams</h5>
-
-        <!-- No Labels Form -->
-        <form class="row g-3">
-
-          <div class="col-md-12">
-            <input type="number" name="number" class="form-control" placeholder="  عدد النماذج  ">
-          </div>
-          <div class="col-md-4">
-            <select id="inputState" name="class" class="form-select">
-              <option selected>الصف</option>
-              <option>الأول الثانوي</option>
-              <option>الثاني الثانوي</option>
-              <option>الثالث الثانوي</option>
-              <option>الأول الإعدادي</option>
-              <option>الثاني الإعدادي</option>
-              <option>الثالث الإعدادي</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <select id="inputState" name="term" class="form-select">
-              <option selected>الترم</option>
-              <option value="1">الأول</option>
-              <option value="2">الثاني</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <select id="inputState" name="unit" class="form-select">
-              <option selected>الباب</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </div>
-          <div class="col-md-4">
-            <select id="inputState" name="lesson" class="form-select">
-              <option selected>الدرس</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-            </select>
-          </div>
-
-          <div class="col-md-12">
-            <input type="number" name="number0" class="form-control" placeholder="  عدد الأسئلة السهلة  " >
-          </div>
-          <div class="col-md-12">
-            <input type="number" name="number1" class="form-control" placeholder="  عدد الأسئلة المتوسط  " >
-          </div>
-          <div class="col-md-12">
-            <input type="number" name="number2" class="form-control" placeholder="  عدد الأسئلة الصعبة  " >
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Print</button>
-          </div>
-        </form><!-- End No Labels Form -->
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
       </div>
-    </div>
-  </main><!-- End #main -->
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      Designed by <a href="https://wa.me/+201017465981">Ahmed ElSaka</a>
-    </div>
-  </footer><!-- End Footer -->
+      <!-- End Logo -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span> </a
+            ><!-- End Notification Icon -->
+          </li>
+          <!-- End Notification Nav -->
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span> </a
+            ><!-- End Messages Icon -->
+          </li>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <li class="nav-item dropdown pe-3">
+            <a
+              class="nav-link nav-profile d-flex align-items-center pe-0"
+              href="#"
+              data-bs-toggle="dropdown"
+            >
+              <img
+                src="assets/img/profile-img.jpg"
+                alt="Profile"
+                class="rounded-circle"
+              />
+              <span class="d-none d-md-block dropdown-toggle ps-2"
+                >Sir. Hamdi</span
+              > </a
+            ><!-- End Profile Iamge Icon -->
+            <ul
+              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
+            >
+              <li class="dropdown-header">
+                <h6>Sir. Hamdi</h6>
+                <span>Chemistry Maestro</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
 
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="add.html">
+            <i class="bi bi-grid"></i>
+            <span>Add Question </span>
+          </a>
+          <a class="nav-link collapsed" href="print.html">
+            <i class="bi bi-grid"></i>
+            <span>Print Exams </span>
+          </a>
+          <a class="nav-link collapsed" href="data.html">
+            <i class="bi bi-grid"></i>
+            <span>Bank Exams </span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <main id="main" class="main" style="text-align: center">
+      <div class="pagetitle" style="text-align: center">
+        <h1>Exams</h1>
+      </div>
+      <!-- End Page Title -->
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Print Exams</h5>
 
-</body>
+          <!-- No Labels Form -->
+          <form class="row g-3">
+            <div class="col-md-12">
+              <input
+                type="number"
+                name="number"
+                class="form-control"
+                placeholder="  عدد النماذج  "
+              />
+            </div>
+            <div class="col-md-4">
+              <select id="inputState" name="class" class="form-select">
+                <option selected>الصف</option>
+                <option>الأول الثانوي</option>
+                <option>الثاني الثانوي</option>
+                <option>الثالث الثانوي</option>
+                <option>الأول الإعدادي</option>
+                <option>الثاني الإعدادي</option>
+                <option>الثالث الإعدادي</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <select id="inputState" name="term" class="form-select">
+                <option selected>الترم</option>
+                <option value="1">الأول</option>
+                <option value="2">الثاني</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <select id="inputState" name="unit" class="form-select">
+                <option selected>الباب</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <select id="inputState" name="lesson" class="form-select">
+                <option selected>الدرس</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
 
+            <div class="col-md-12">
+              <input
+                type="number"
+                name="number0"
+                class="form-control"
+                placeholder="  عدد الأسئلة السهلة  "
+              />
+            </div>
+            <div class="col-md-12">
+              <input
+                type="number"
+                name="number1"
+                class="form-control"
+                placeholder="  عدد الأسئلة المتوسط  "
+              />
+            </div>
+            <div class="col-md-12">
+              <input
+                type="number"
+                name="number2"
+                class="form-control"
+                placeholder="  عدد الأسئلة الصعبة  "
+              />
+        
+            </div>
+            <iframe src="data.html"></iframe>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Print</button>
+            </div>
+          </form>
+          <!-- End No Labels Form -->
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://wa.me/+201017465981">Ahmed ElSaka</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script
+      src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+      integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

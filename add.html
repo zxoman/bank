@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>uhhyyh
+<head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -20,11 +20,10 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+  <script src="/ckeditor/ckeditor.js"></script>
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -176,7 +175,15 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">السؤال</h5>
-                  <div name="text" id="text" class="quill-editor-full">
+                  <div id="text">
+                    <div class="q"><div>زياد السيد</div></div>
+                    <div class="ans">
+                      <div class="a"><div>زياد السيد</div></div>
+                      <div class="a"><div>زياد السيد</div></div>
+                      <div class="a"><div>زياد السيد</div></div>
+                      <div class="a"><div>زياد السيد</div></div>
+                    </div>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -185,67 +192,24 @@
           <textarea name="answer_text" id="text_area" cols="30" rows="10"></textarea>
 
           <div id="choices">
-            <section class="section">
-              <div class="col-lg-6" style="width:100%;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">الاجابه أ</h5>
-                    <div name="ans1" id="ans1">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="col-lg-6" style="width:100%;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">الاجابه ب</h5>
-                    <div name="ans2" id="ans2">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="col-lg-6" style="width:100%;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">الاجابه ج</h5>
-                    <div name="ans3" id="ans3">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section class="section">
-              <div class="col-lg-6" style="width:100%;">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">الاجابه د</h5>
-                    <div name="ans4" id="ans4">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <div class="col-md-6">
+            <div class="ansf col-md-6">
               <input type="text" disabled class="form-control" placeholder="ا"><input type="radio" value="1" name="ans"
                 id="ans-1">
             </div>
-            <div class="col-md-6">
+            <div class="ansf col-md-6">
               <input type="text" disabled class="form-control" placeholder="ب"><input type="radio" value="2" name="ans"
                 id="ans-2">
             </div>
-            <div class="col-md-6">
+            <div class="ansf col-md-6">
               <input type="text" disabled class="form-control" placeholder="ج"><input type="radio" value="3" name="ans"
                 id="ans-3">
             </div>
-            <div class="col-md-6">
+            <div class="ansf col-md-6">
               <input type="text" disabled class="form-control" placeholder="د"><input type="radio" value="4" name="ans"
                 id="ans-4">
             </div>
           </div>
+          <br>
           <div class="text-center">
             <button type="button" onclick="add()" class="btn btn-primary">Submit</button>
             <button type="reset" class="btn btn-secondary">Reset</button>
@@ -268,12 +232,22 @@
       class="bi bi-arrow-up-short"></i></a>
   <!-- Vendor JS Files -->
   <script src="https://cdn.socket.io/4.5.0/socket.io.min.js" integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/connect.js"></script>
-
+<script>
+    select_type = (e) => {
+    if (e.value == "text") {
+      $("#choices").hide();
+      $("#text_area").show();
+    } else {
+      $("#choices").show();
+      $("#text_area").hide();
+    }
+  };
+</script>
 </body>
 
 </html>

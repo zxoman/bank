@@ -1,0 +1,11 @@
+.q {
+    border: solid 20px;
+    border-image: url(/assets/img/0.png) 30 round;
+  }
+  .a {
+    float: left;
+    width: 44%;
+    margin: 1%;
+    border: solid 20px;
+    border-image: url(/assets/img/0.png) 30 round;
+  }

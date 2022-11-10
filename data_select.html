@@ -58,12 +58,19 @@
       border-radius: 7px;
       color: white;
       margin: 1%;
+      display: none;
     }
-    .del{
+
+    .del {
       background: red;
     }
-    .edi{
+
+    .edi {
       background: green;
+    }
+
+    #main {
+      margin: 0 !important;
     }
   </style>
 </head>
@@ -71,72 +78,7 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
-      <a href="" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
-      </a>
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
-        </li><!-- End Notification Nav -->
-        <li class="nav-item dropdown">
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-        <li class="nav-item dropdown pe-3">
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Sir. Hamdi</span>
-          </a><!-- End Profile Iamge Icon -->
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Sir. Hamdi</h6>
-              <span>Chemistry Maestro</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-      </ul>
-    </nav><!-- End Icons Navigation -->
-  </header><!-- End Header -->
-
-  <aside id="sidebar" class="sidebar">
-    <ul class="sidebar-nav" id="sidebar-nav">
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="add.html">
-          <i class="bi bi-grid"></i>
-          <span>Add Question
-          </span>
-        </a>
-        <a class="nav-link collapsed" href="print.html">
-          <i class="bi bi-grid"></i>
-          <span>Print Exams
-          </span>
-        </a>
-        <a class="nav-link collapsed" href="data.html">
-          <i class="bi bi-grid"></i>
-          <span>Bank Exams
-          </span>
-        </a>
-      </li>
-
-    </ul>
-  </aside>
 
 
   <main id="main" class="main" style="text-align:center;">
@@ -258,9 +200,17 @@
   <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/connect.js"></script>
-<script>
-  get_data()
-</script>
+  <script>
+    get_data()
+    var idsz = [];
+    function ziad(id) {
+      if (idsz.indexOf(id) > -1) {
+        idsz.splice(idsz.indexOf(id), 1)
+      } else {
+        idsz[idsz.length] = id;
+      }
+    }
+  </script>
 </body>
 
 </html>

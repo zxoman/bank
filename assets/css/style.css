@@ -1253,3 +1253,6 @@ h6 {
   display: unset;
   margin:1%;
 }
+.ansf{
+  float: left;
+}

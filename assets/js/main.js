@@ -1,58 +1,67 @@
 (function () {
   "use strict";
-  $('#choices').hide();
+   $('#choices').hide();
   $('#text_area').hide();
-
-
-  var config_quill = {
-    modules: {
-      toolbar: [
-        [{
-          font: []
-        }, {
-          size: []
-        }],
-        ["bold", "italic", "underline", "strike"],
-        [{
-          color: []
-        },
-        {
-          background: []
-        }
-        ],
-        [{
-          script: "super"
-        },
-        {
-          script: "sub"
-        }
-        ],
-        [{
-          list: "ordered"
-        },
-        {
-          list: "bullet"
-        },
-        {
-          indent: "-1"
-        },
-        {
-          indent: "+1"
-        }
-        ],
-        ["direction", {
-          align: []
-        }],
-        ["image", "video"],
-        ["clean"]
-      ]
-    },
-    theme: "snow"
-  }
-  new Quill("#ans1", config_quill);
-  new Quill("#ans2", config_quill);
-  new Quill("#ans3", config_quill);
-  new Quill("#ans4", config_quill);
+  CKEDITOR.replace( 'text' );
+  select_type = (e) => {
+    if (e.value == "text") {
+      $("#choices").hide();
+      $("#text_area").show();
+    } else {
+      $("#choices").show();
+      $("#text_area").hide();
+    }
+  };
+  
+  // var config_quill = {
+  //   modules: {
+  //     toolbar: [
+  //       [{
+  //         font: []
+  //       }, {
+  //         size: []
+  //       }],
+  //       ["bold", "italic", "underline", "strike"],
+  //       [{
+  //         color: []
+  //       },
+  //       {
+  //         background: []
+  //       }
+  //       ],
+  //       [{
+  //         script: "super"
+  //       },
+  //       {
+  //         script: "sub"
+  //       }
+  //       ],
+  //       [{
+  //         list: "ordered"
+  //       },
+  //       {
+  //         list: "bullet"
+  //       },
+  //       {
+  //         indent: "-1"
+  //       },
+  //       {
+  //         indent: "+1"
+  //       }
+  //       ],
+  //       ["direction", {
+  //         align: []
+  //       }],
+  //       ["image", "video"],
+  //       ["clean"]
+  //     ]
+  //   },
+  //   theme: "snow"
+  // }
+  // new Quill("#ans1", config_quill);
+  // new Quill("#ans2", config_quill);
+  // new Quill("#ans3", config_quill);
+  // new Quill("#ans4", config_quill);
   /**
    * Easy selector helper function
    */
@@ -164,65 +173,65 @@
   /**
    * Initiate quill editors
    */
-  if (select('.quill-editor-default')) {
-    new Quill('.quill-editor-default', {
-      theme: 'snow'
-    });
-  }
+  // if (select('.quill-editor-default')) {
+  //   new Quill('.quill-editor-default', {
+  //     theme: 'snow'
+  //   });
+  // }
 
-  if (select('.quill-editor-bubble')) {
-    new Quill('.quill-editor-bubble', {
-      theme: 'bubble'
-    });
-  }
+  // if (select('.quill-editor-bubble')) {
+  //   new Quill('.quill-editor-bubble', {
+  //     theme: 'bubble'
+  //   });
+  // }
 
-  if (select('.quill-editor-full')) {
-    new Quill(".quill-editor-full", {
-      modules: {
-        toolbar: [
-          [{
-            font: []
-          }, {
-            size: []
-          }],
-          ["bold", "italic", "underline", "strike"],
-          [{
-            color: []
-          },
-          {
-            background: []
-          }
-          ],
-          [{
-            script: "super"
-          },
-          {
-            script: "sub"
-          }
-          ],
-          [{
-            list: "ordered"
-          },
-          {
-            list: "bullet"
-          },
-          {
-            indent: "-1"
-          },
-          {
-            indent: "+1"
-          }
-          ],
-          ["direction", {
-            align: []
-          }],
-          ["link", "image", "video"],
-          ["clean"]
-        ]
-      },
-      theme: "snow"
-    });
-  }
+  // if (select('.quill-editor-full')) {
+  //   new Quill(".quill-editor-full", {
+  //     modules: {
+  //       toolbar: [
+  //         [{
+  //           font: []
+  //         }, {
+  //           size: []
+  //         }],
+  //         ["bold", "italic", "underline", "strike"],
+  //         [{
+  //           color: []
+  //         },
+  //         {
+  //           background: []
+  //         }
+  //         ],
+  //         [{
+  //           script: "super"
+  //         },
+  //         {
+  //           script: "sub"
+  //         }
+  //         ],
+  //         [{
+  //           list: "ordered"
+  //         },
+  //         {
+  //           list: "bullet"
+  //         },
+  //         {
+  //           indent: "-1"
+  //         },
+  //         {
+  //           indent: "+1"
+  //         }
+  //         ],
+  //         ["direction", {
+  //           align: []
+  //         }],
+  //         ["link", "image", "video"],
+  //         ["clean"]
+  //       ]
+  //     },
+  //     theme: "snow"
+  //   });
+  // }
 
   /**
    * Initiate TinyMCE Editor
