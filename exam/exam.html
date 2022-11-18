@@ -2,10 +2,10 @@
 <html>
 <head>
 	<title></title>
-		<style>
+	<style>
     .q {
       border: solid 20px;
-      border-image: url(/assets/img/0.png) 30 round;
+      border-image: url(assets/img/0.png) 30 round;
       direction: rtl;
       margin-bottom: 1%;
       text-align: right;
@@ -13,7 +13,7 @@
 
     .a {
       border: solid 20px;
-      border-image: url(/assets/img/0.png) 30 round;
+      border-image: url(assets/img/0.png) 30 round;
       direction: rtl;
       text-align: right;
 
@@ -53,8 +53,16 @@
         integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k"
         crossorigin="anonymous"></script>
 <script type="text/javascript">
+	function get(name, url = window.location.href) {
+	    name = name.replace(/[\[\]]/g, '\\$&');
+	    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+	        results = regex.exec(url);
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+	}
 	var socket = io("http://localhost:3000");
-	socket.emit('get_exam',1)
+	socket.emit('get_exam',get('id'))
 	socket.on('get_exam',(data)=>{
 		data.forEach(myFunction);
 		var txt = ""
