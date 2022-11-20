@@ -127,101 +127,29 @@
           <h5 class="card-title">Print Exams</h5>
 
           <!-- No Labels Form -->
-          <form class="row g-3">
+          <form class="row g-3" id="form">
             <div class="col-md-12">
               <input
                 type="number"
-                name="number"
+                name="num"
                 class="form-control"
                 placeholder="  عدد النماذج  "
               />
-            </div>
-            <div class="col-md-4">
-              <select id="inputState" name="class" class="form-select">
-                <option selected>الصف</option>
-                <option>الأول الثانوي</option>
-                <option>الثاني الثانوي</option>
-                <option>الثالث الثانوي</option>
-                <option>الأول الإعدادي</option>
-                <option>الثاني الإعدادي</option>
-                <option>الثالث الإعدادي</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <select id="inputState" name="term" class="form-select">
-                <option selected>الترم</option>
-                <option value="1">الأول</option>
-                <option value="2">الثاني</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <select id="inputState" name="unit" class="form-select">
-                <option selected>الباب</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </div>
-            <div class="col-md-4">
-              <select id="inputState" name="lesson" class="form-select">
-                <option selected>الدرس</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-                <option>9</option>
-                <option>10</option>
-              </select>
-            </div>
-
-            <div class="col-md-12">
-              <input
-                type="number"
-                name="number0"
-                class="form-control"
-                placeholder="  عدد الأسئلة السهلة  "
-              />
-            </div>
-            <div class="col-md-12">
-              <input
-                type="number"
-                name="number1"
-                class="form-control"
-                placeholder="  عدد الأسئلة المتوسط  "
-              />
-            </div>
-            <div class="col-md-12">
-              <input
-                type="number"
-                name="number2"
-                class="form-control"
-                placeholder="  عدد الأسئلة الصعبة  "
-              />
-        
             </div>
             <h1>اختياري</h1>
             <div class="col-md-12">
               <input
                 type="number"
-                name="number2"
+                name="ch_num"
                 class="form-control"
                 placeholder="  عدد الأسئلة   "
               />
         
             </div>
-            <iframe src="data_select.html"></iframe>
-            <iframe src="data_select.html"></iframe>
+            <iframe src="data_select.html" id="ch"></iframe>
+            <br>
+            <h1>اجباري</h1>
+            <iframe src="data_select.html" id="con"></iframe>
             <div class="text-center">
               <button type="submit" class="btn btn-primary">Print</button>
             </div>
@@ -264,5 +192,18 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+        var form = document.forms[0].elements;
+        var socket = io("http://localhost:3000");
+      printz = ()=>{
+        data = {
+          ch:document.getElementById("ch").contentWindow.idsz,
+          ch_num:form.ch_num.value,
+          con:document.getElementById("con").contentWindow.idsz,
+          num:form.num.value,
+        }
+        socket.emit("create_exam", data);
+      }
+    </script>
   </body>
 </html>
