@@ -57,14 +57,21 @@ socket.on("del", (d) => {
 set_data = (ni) => {
   for (let nin = ni; nin < ni + 5; nin++) {
     const element = dataq[nin];
+    console.log(element.id,idsz.indexOf(element.id));
+    if (idsz.indexOf(element.id) > -1) {
+      sel = "checked";
+    } else {
+      sel = "";
+    }
+    console.log(sel);
     $("#data").append(`<div class="qu">
-    <div>
-      <button class="but1 del" onclick="del(${element.id})">delete</button><input type="checkbox" onclick="ziad(${element.id})">
-      <a href='/edit.html?id=${element.id}'><button class="but1 edi">edit</button></a>
-    </div>
-    ${element.text}
+      <div>
+        <button class="but1 del" onclick="del(${element.id})">delete</button><input type="checkbox" ${sel} onclick="ziad(${element.id})">
+        <a href='/edit.html?id=${element.id}'><button class="but1 edi">edit</button></a>
+      </div>
+      ${element.text}
 
-    </div>`);
+      </div>`);
   }
 };
 

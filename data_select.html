@@ -169,6 +169,7 @@
       <div class="card-body">
         <h5 class="card-title">Bank</h5>
         <!-- Bordered Table -->
+        <button onclick="select_all()">Select All</button>
         <div class="data" id="data">
 
         </div>
@@ -202,6 +203,13 @@
   <script src="assets/js/connect.js"></script>
   <script>
     get_data()
+    function select_all() {
+      for (let index = 0; index < dataq.length; index++) {
+        var element = dataq[index];
+        ziad(element.id)
+      }
+      get_data();
+    }
     var idsz = [];
     function ziad(id) {
       if (idsz.indexOf(id) > -1) {
