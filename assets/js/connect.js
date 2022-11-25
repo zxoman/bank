@@ -1,4 +1,4 @@
-var socket = io("http://localhost:3000");
+var socket = io("https://question1bank.herokuapp.com");
 // add question
 function get_src() {
   var data = CKEDITOR.instances.text.getData();
