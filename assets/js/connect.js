@@ -55,13 +55,20 @@ socket.on("del", (d) => {
 });
 
 set_data = (ni) => {
+  //idsz = []
+
   for (let nin = ni; nin < ni + 5; nin++) {
     const element = dataq[nin];
-    console.log(element.id,idsz.indexOf(element.id));
-    if (idsz.indexOf(element.id) > -1) {
-      sel = "checked";
-    } else {
+    //console.log(element.id,idsz.indexOf(element.id));
+    if (typeof idsz !== 'undefined' ) {
+      if (idsz.indexOf(element.id) > -1) {
+        sel = "checked";
+      } else {
+        sel = "";
+      }
+    }else{
       sel = "";
+
     }
     console.log(sel);
     $("#data").append(`<div class="qu">

@@ -60,14 +60,16 @@
       if (!results[2]) return "";
       return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
+
     var socket = io("http://localhost:3000");
     console.log(get("id"));
     socket.emit("get_exam", get("id"));
     socket.on("get_exam", (data) => {
-      data.forEach(myFunction);
       var txt = "";
-      function myFunction(qu) {
+      for (let index = 0; index < data.length; index++) {
+        const qu = data[index];
         txt += qu.text + "<br>";
+        //console.log(txt);
         document.getElementById("qu").innerHTML = txt;
       }
     });

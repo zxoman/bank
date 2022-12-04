@@ -204,6 +204,16 @@
         }
         socket.emit("create_exam", data);
       }
+      socket.on("exam", ()=>{
+        console.log("hd");
+        num = form.num.value
+        i = 0
+        while (i < num) {
+          console.log(i,num);
+          window.open(`exam.html?id=${i}`, '_blank').focus();
+          i++;
+        }
+      });
     </script>
   </body>
 </html>
