@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title></title>
@@ -40,10 +39,28 @@
       .edi {
         background: green;
       }
+      .grid-container {
+        display: grid;
+        height: 20%;
+        direction: rtl;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 100%;
+
+      }
+      .img{
+        width: 100%;
+        height: 100%;
+      }
     </style>
   </head>
   <body>
-    <div></div>
+    <div class="grid-container">
+      <div> ميسترو الكيمياء الاستاز حمدي عبد الصمد</div>
+      <div id="form">نموزج الامتحان:</div>
+      <div><img class="img" src="https://barcode.tec-it.com/barcode.ashx?data=1&code=&translate-esc=true"></div>
+
+    </div>
+<hr>
     <div id="qu"></div>
   </body>
   <script
@@ -63,6 +80,8 @@
 
     var socket = io("http://localhost:3000");
     console.log(get("id"));
+    document.getElementById('form').innerHTML += get("id");
+    document.querySelector('.img').src = `https://barcode.tec-it.com/barcode.ashx?data=${get("id")}&code=&translate-esc=true`;
     socket.emit("get_exam", get("id"));
     socket.on("get_exam", (data) => {
       var txt = "";
