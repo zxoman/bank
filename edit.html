@@ -273,7 +273,7 @@
             return data;
         }
 
-        var socket = io("http://localhost:3000");
+        var socket = io("https://question-bank.onrender.com/");
         const urlSearchParams = new URLSearchParams(window.location.search);
         const params = Object.fromEntries(urlSearchParams.entries())
         var form = document.forms[0].elements;

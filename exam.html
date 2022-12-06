@@ -1,4 +1,4 @@
-<html>
+<html dir="rtl">
   <head>
     <title></title>
     <style>
@@ -6,7 +6,8 @@
         border: solid 20px;
         border-image: url(assets/img/0.png) 30 round;
         direction: rtl;
-        margin-bottom: 1%;
+        margin-bottom: 2%;
+        margin-bottom: 20px;
         text-align: right;
       }
 
@@ -52,7 +53,7 @@
         margin-right: 5px;
         }
       .img {
-        width: 100%;
+        /* width: 100%; */
         height: 100%;
       }
       hr {
@@ -101,20 +102,16 @@
       return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 
-    var socket = io("http://localhost:3000");
+    var socket = io("https://question-bank.onrender.com/");
     console.log(get("id"));
     document.getElementById("form").innerHTML += get("id");
-    document.querySelector(
-      ".bar"
-    ).src = `https://barcode.tec-it.com/barcode.ashx?data=${get(
-      "id"
-    )}&code=&translate-esc=true`;
+    document.querySelector(".bar").src = `https://barcode.tec-it.com/barcode.ashx?data=${get("id")}&code=&translate-esc=true`;
     socket.emit("get_exam", get("id"));
     socket.on("get_exam", (data) => {
       var txt = "";
       for (let index = 0; index < data.length; index++) {
         const qu = data[index];
-        txt += qu.text + "<br>";
+        txt += qu.text + "<br><br>";
         //console.log(txt);
         document.getElementById("qu").innerHTML = txt;
       }
